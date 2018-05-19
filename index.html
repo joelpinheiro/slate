@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;Examples&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -209,12 +209,9 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/logo_2.png" class="logo" alt="Logo 2" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="Examples">Examples</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -222,111 +219,58 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#in-patrimonium-methods" class="toc-h1 toc-link" data-title="in-patrimonium-methods">In Patrimonium Methods</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#url" class="toc-h2 toc-link" data-title="url">URL</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#record-from-id" class="toc-h2 toc-link" data-title="record-from-id">Record From ID</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#top-records" class="toc-h2 toc-link" data-title="top-records">Top Records</a>
+                  </li>
+                  <li>
+                    <a href="#records-by-date" class="toc-h2 toc-link" data-title="records-by-date">Records by date</a>
+                  </li>
+                  <li>
+                    <a href="#delete-records" class="toc-h2 toc-link" data-title="delete-records">Delete records</a>
+                  </li>
+                  <li>
+                    <a href="#edited-records" class="toc-h2 toc-link" data-title="edited-records">Edited records</a>
+                  </li>
+                  <li>
+                    <a href="#cronology" class="toc-h2 toc-link" data-title="cronology">Cronology</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='#'><i>Sistemas do Futuro</i></a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the In patrimonium Premium API! You can use our API to access In patrimonium Premium API endpoints, which can get information of different categories in our database.</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<p>This API documentation page was created with <a href="https://github.com/lord/slate">Slate</a> and it belongs to &#39;Sistemas do Futuro&#39;.</p>
+<h1 id='in-patrimonium-methods'>In Patrimonium Methods</h1><h2 id='url'>URL</h2>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>This method returns a URL like the following one:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<pre class="highlight plaintext"><code>https://museudigital.marinha.pt/pesquisa/ficha.aspx?t=o&amp;id=43
 </code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
+<p>This endpoint retrieves a specific URL from museudigital.marinha.pt</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p><code>GET http://localhost:5000/api/url/&lt;record_id&gt;</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -336,106 +280,371 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>url_id</td>
+<td>43</td>
+<td>record url that will be retrieved</td>
 </tr>
 </tbody></table>
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Try out — <a href='http://localhost:5000/api/url?url_id=43'>http://localhost:5000/api/url</a>
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
+<h2 id='record-from-id'>Record From ID</h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>This method returns a JSON structured like this one:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">  
+     </span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"dt_registo"</span><span class="p">:</span><span class="mi">1462752000000</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"dt_actualizacao"</span><span class="p">:</span><span class="mi">1471305600000</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"identifier"</span><span class="p">:</span><span class="s2">"0001"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"designacao"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Coleta da neblina"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"creator"</span><span class="p">:</span><span class="s2">"Br</span><span class="se">\u</span><span class="s2">00edgida Baltar"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"subject"</span><span class="p">:</span><span class="s2">"Fotografia"</span><span class="p">,</span><span class="w">
+     </span><span class="err">(...)</span><span class="w">
+     </span><span class="s2">"tecnica"</span><span class="p">:</span><span class="s2">"Fotografia anal</span><span class="se">\u</span><span class="s2">00f3gica colorida"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"ficheiro"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific record from In patrimonium Premium.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET http://localhost:5000/api/record/&lt;record_id&gt;</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>record_id</td>
+<td>4</td>
+<td>record that will be retrieved</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Try out — <a href='http://localhost:5000/api/record?id=4'>http://localhost:5000/api/record</a>
+</aside>
+<h2 id='top-records'>Top Records</h2>
+<blockquote>
+<p>This method returns a JSON structured like this one:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">7</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8</span><span class="p">}</span><span class="w"> 
+</span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">9</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">10</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">12</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">13</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">14</span><span class="p">}</span><span class="w"> 
+</span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">16</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">17</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">18</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">19</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span><span class="w"> 
+</span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">22</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">23</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">26</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">25</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">11</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the top record from In patrimonium Premium </p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET http://localhost:5000/api/records/&lt;total_records&gt;</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>total_records</td>
+<td>100</td>
+<td>number of records to retrieve</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Try out — <a href='http://localhost:5000/api/records?total_records=100'>http://localhost:5000/api/records</a>
+</aside>
+<h2 id='records-by-date'>Records by date</h2>
+<blockquote>
+<p>This method returns a JSON structured like this one:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dt_registo"</span><span class="p">:</span><span class="mi">1462752000000</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dt_actualizacao"</span><span class="p">:</span><span class="mi">1471305600000</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"identifier"</span><span class="p">:</span><span class="s2">"0001"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"designacao"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Coleta da neblina"</span><span class="p">,</span><span class="w">
+   </span><span class="err">(...)</span><span class="w">
+   </span><span class="s2">"tecnica"</span><span class="p">:</span><span class="s2">"Fotografia anal</span><span class="se">\u</span><span class="s2">00f3gica colorida"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"ficheiro"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">  
+   </span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dt_registo"</span><span class="p">:</span><span class="mi">1462752000000</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dt_actualizacao"</span><span class="p">:</span><span class="mi">1471305600000</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"identifier"</span><span class="p">:</span><span class="s2">"0004"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"designacao"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Viva Maria"</span><span class="p">,</span><span class="w">
+   </span><span class="err">(...)</span><span class="w">
+   </span><span class="s2">"tecnica"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"ficheiro"</span><span class="p">:</span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<p>This endpoint retrieves the top record from In patrimonium Premium between dates</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET http://localhost:5000/api/records_by_date/&lt;total_records&gt;</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>initial_date</td>
+<td>07/04/1976</td>
+<td>initial date</td>
+</tr>
+<tr>
+<td>final_date</td>
+<td>07/04/2020</td>
+<td>end date</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Try out — <a href='http://localhost:5000/api/records_by_date?initial_date=07/04/1976&final_date=07/04/2020'>http://localhost:5000/api/records_by_date</a>
+</aside>
+<h2 id='delete-records'>Delete records</h2>
+<p>This endpoint deletes records between dates</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET http://localhost:5000/api/delete_records/&lt;total_records&gt;</code></p>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>initial_date</td>
+<td>07/04/1976</td>
+<td>initial date</td>
+</tr>
+<tr>
+<td>final_date</td>
+<td>07/04/1980</td>
+<td>end date</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Try out — <a href='http://localhost:5000/api/delete_records?initial_date=07/04/1976&final_date=07/04/1980'>http://localhost:5000/api/delete_records</a>
+</aside>
+<h2 id='edited-records'>Edited records</h2>
+<blockquote>
+<p>This method returns a JSON structured like this one:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">4</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">5</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">6</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">7</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">8</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">9</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">10</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">12</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">13</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">14</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">16</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">17</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">18</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">19</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">22</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">23</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">26</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">25</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">11</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrives the edited records between dates</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET http://localhost:5000/api/edited_records/&lt;total_records&gt;</code></p>
+<h3 id='query-parameters-6'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>initial_date</td>
+<td>07/04/1976</td>
+<td>initial date</td>
+</tr>
+<tr>
+<td>final_date</td>
+<td>07/04/2060</td>
+<td>end date</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Try out — <a href='http://localhost:5000/api/edited_records?initial_date=07/04/1976&final_date=07/04/2060'>http://localhost:5000/api/edited_records</a>
+</aside>
+<h2 id='cronology'>Cronology</h2>
+<blockquote>
+<p>This method returns a JSON structured like this one:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">{</span><span class="w">  
+   </span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dt_registo"</span><span class="p">:</span><span class="mi">1462752000000</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dt_actualizacao"</span><span class="p">:</span><span class="mi">1471305600000</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"identifier"</span><span class="p">:</span><span class="s2">"0001"</span><span class="p">,</span><span class="w">
+   </span><span class="err">(...)</span><span class="w">
+   </span><span class="s2">"cronologia"</span><span class="p">:</span><span class="s2">"1996"</span><span class="p">,</span><span class="w">
+   </span><span class="err">(...)</span><span class="w">
+</span><span class="p">}{</span><span class="w">  
+   </span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dt_registo"</span><span class="p">:</span><span class="mi">1462752000000</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dt_actualizacao"</span><span class="p">:</span><span class="mi">1463097600000</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"identifier"</span><span class="p">:</span><span class="s2">"0002"</span><span class="p">,</span><span class="w">
+   </span><span class="err">(...)</span><span class="w">
+   </span><span class="s2">"cronologia"</span><span class="p">:</span><span class="s2">"1996"</span><span class="p">,</span><span class="w">
+   </span><span class="err">(...)</span><span class="w">
+</span><span class="p">}{</span><span class="w">  
+   </span><span class="s2">"objecto_id"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dt_registo"</span><span class="p">:</span><span class="mi">1462752000000</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dt_actualizacao"</span><span class="p">:</span><span class="mi">1463097600000</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"identifier"</span><span class="p">:</span><span class="s2">"0003"</span><span class="p">,</span><span class="w">
+   </span><span class="err">(...)</span><span class="w">
+   </span><span class="s2">"cronologia"</span><span class="p">:</span><span class="s2">"1996"</span><span class="p">,</span><span class="w">
+   </span><span class="err">(...)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the records from a &#39;cronology&#39;</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET http://localhost:5000/api/cronology/&lt;cron&gt;</code></p>
+<h3 id='query-parameters-7'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cron</td>
+<td>1996</td>
+<td>cronology</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Try out — <a href='http://localhost:5000/api/cronology?cron=1996'>http://localhost:5000/api/cronology</a>
+</aside>
+
+<!--
+
+## Get a Specific Kitten
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.get(2)
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.get(2)
+```
+
+```shell
+curl "http://example.com/api/kittens/2"
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.get(2);
+```
+
+> The above command returns JSON structured like this one:
+
+```json
+{
+  "id": 2,
+  "name": "Max",
+  "breed": "unknown",
+  "fluffiness": 5,
+  "cuteness": 10
+}
+```
+
+This endpoint retrieves a specific kitten.
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+### HTTP Request
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
+`GET http://example.com/kittens/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the kitten to retrieve
+
+## Delete a Specific Kitten
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.delete(2)
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.delete(2)
+```
+
+```shell
+curl "http://example.com/api/kittens/2"
   -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+  -H "Authorization: meowmeowmeow"
+```
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.delete(2);
+```
+
+> The above command returns JSON structured like this one:
+
+```json
+{
+  "id": 2,
+  "deleted" : ":("
+}
+```
+
+This endpoint deletes a specific kitten.
+
+### HTTP Request
+
+`DELETE http://example.com/kittens/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the kitten to delete
+
+-->
 <h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+<aside class="notice">
+HTTP Troubleshooting
+</aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>The API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -445,7 +654,7 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request -- Your request sucks.</td>
+<td>Bad Request -- Your request is invalid.</td>
 </tr>
 <tr>
 <td>401</td>
@@ -453,15 +662,15 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- The method requested is hidden for administrators only.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The specified method could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>Method Not Allowed -- You tried to access a method with an invalid method.</td>
 </tr>
 <tr>
 <td>406</td>
@@ -469,7 +678,7 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 <tr>
 <td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>Gone -- The method requested has been removed from our servers.</td>
 </tr>
 <tr>
 <td>418</td>
@@ -477,7 +686,7 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Too Many Requests -- You&#39;re requesting too many methods! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
@@ -492,10 +701,7 @@ Remember — a happy kitten is an authenticated kitten!
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="Examples">Examples</a>
           </div>
       </div>
     </div>
